@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+{% block body %}
+ <div class="text-center mb-4">
+        <!--<img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
+        <h1 class="font-weight-normal">Search</h1>
+        <p>Put here string</a></p>
+      </div>
+
+        <!--<form class="form-inline">-->
+          <!--<input class="form-control mr-sm-2" type="text" placeholder="Search by name" aria-label="Search name">-->
+          <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+        <!--</form>-->
+
+
+        <!--<form class="form-inline">-->
+          <!--<input class="form-control mr-sm-2" type="text" placeholder="Search by contains" aria-label="Search contains">-->
+          <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+        <!--</form>-->
+
+        <form class="search-query" method="POST" action="/search_name">
+          <div class="input-group">
+            <span class="input-group-btn">
+                <input class="btn btn-default" name="b_name" type="submit" value="Search" />
+            </span>
+            <input type="text" class="form-control"  placeholder="Search by name" name="name">
+          </div>
+        </form>
+        <form class="search-query" method="POST" action="/search_contains">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search by contains" name="contains">
+              <span class="input-group-btn">
+                <input class="btn btn-default" name="b_name" type="submit" value="Search" />
+            </span>
+          </div>
+        </form>
+
+
+
+
+      <!--<div class="checkbox mb-3">-->
+        <!--<label>-->
+          <!--<input value="remember-me" type="checkbox"> Remember me-->
+        <!--</label>-->
+      <!--</div>-->
+
+  <!--<form class="form-signin">-->
+      <!--<div class="input-group">-->
+        <!--<span class="input-group-btn">-->
+            <!--<button class="btn btn-default" type="button">Go!</button>-->
+        <!--</span>-->
+        <!--<input type="text" class="form-control">-->
+      <!--</div>-->
+
+      <!--<div class="input-group">-->
+        <!--<input type="text" class="form-control">-->
+          <!--<span class="input-group-btn">-->
+            <!--<button class="btn btn-default" type="button">Go!</button>-->
+        <!--</span>-->
+
+      <!--</div>-->
+
+
+
+{% endblock %}
