@@ -6,11 +6,14 @@ class Seach:
         self.medicatoin = Data().Medication
 
     def search_by_name(self, string):
+        # print(self.medicatoin)
         result = [drug for drug in self.medicatoin if string in drug.med_name.split(',')[0].lower()]
         return result
 
     def search_by_component(self, string):
-        result = [drug for drug in self.data if string in drug.med_composition]
+        # print(self.medicatoin)
+        result = [drug for drug in self.medicatoin if string in drug.med_composition.lower()]
+        # print(result)
         return result
 
     def search_for_user(self,where, string):

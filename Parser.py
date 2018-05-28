@@ -25,12 +25,14 @@ class Data:
         for i in Prescriptions.query.all():
             self.Prescriptions.append(i)
     @staticmethod
-    def toJSon(self, data):
+    def toJSon(data):
         JSon = dict()
 
-        list_data = data.split(",")
+        list_data = data.__str__().split("|")
+        print(list_data)
         for part in list_data:
-            el = part.split(":")
+            el = part.split("~")
+            print(el)
             JSon[el[0]] = el[1]
 
         return  JSon

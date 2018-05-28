@@ -25,13 +25,20 @@ class Doctors(idb.db.Model):
         self.position = position
 
     def __repr__(self):
-        return 'iddoctors:{},email:{},name:{},surname:{},position:{}'.format(
+        return 'iddoctors:{}|email:{}|name:{}|surname:{}|position:{}'.format(
             self.iddoctors,
             self.email,
             self.name,
             self.surname,
             self.position)
 
+    def __str__(self):
+        return 'iddoctors~{}|email~{}|name~{}|surname~{}|position~{}'.format(
+            self.iddoctors,
+            self.email,
+            self.name,
+            self.surname,
+            self.position)
 
 class Prescriptions(idb.db.Model):
     __tablename__ = 'prescriptions'
@@ -45,7 +52,14 @@ class Prescriptions(idb.db.Model):
         self.doctors_iddoctors = doctors_iddoctors
 
     def __repr__(self):
-        return 'prescription_id:{},prescription_date:{},prescription_signa:{},doctors_iddoctors:{}'.format(
+        return 'prescription_id:{}|prescription_date:{}|prescription_signa:{}|doctors_iddoctors:{}'.format(
+            self.prescription_id,
+            self.prescription_date,
+            self.prescription_signa,
+            self.doctors_iddoctors)
+
+    def __str__(self):
+        return 'prescription_id~{}|prescription_date~{}|prescription_signa~{}|doctors_iddoctors~{}'.format(
             self.prescription_id,
             self.prescription_date,
             self.prescription_signa,
@@ -63,16 +77,25 @@ class Medication(idb.db.Model):
 
     def __init__(self, med_url, med_name, med_man_country, med_composition, med_release_type):
         # self.med_id = med_url
-        self.med_ur = med_url
+        self.med_url = med_url
         self.med_name = med_name
         self.med_man_country = med_man_country
         self.med_composition = med_composition
         self.med_release_type = med_release_type
 
     def __repr__(self):
-        return 'med_id:{},med_ur:{},med_name:{},med_man_country:{},med_composition:{},med_release_type:{}'.format(
+        return 'med_id~{}|med_ur~{}|med_name~{}|med_man_country~{}|med_composition~{}|med_release_type~{}'.format(
             self.med_id,
-            self.med_ur,
+            self.med_url,
+            self.med_name,
+            self.med_man_country,
+            self.med_composition,
+            self.med_release_type)
+
+    def __str__(self):
+        return 'med_id~{}|med_ur~{}|med_name~{}|med_man_country~{}|med_composition~{}|med_release_type~{}'.format(
+            self.med_id,
+            self.med_url,
             self.med_name,
             self.med_man_country,
             self.med_composition,
@@ -92,9 +115,16 @@ class PrescriptionMed(idb.db.Model):
         self.med_term = med_term
 
     def __repr__(self):
-        return 'prescriptions_prescription_id:{},medication_med_id:{},med_dosage:{},med_term:{}'.format(
+        return 'prescriptions_prescription_id:{}|medication_med_id:{}|med_dosage:{}|med_term:{}'.format(
             self.prescriptions_prescription_id,
             self.medication_med_id,
             self.med_dosage,
-            self.med_term,
+            self.med_term
         )
+
+    def __str__(self):
+        return 'prescriptions_prescription_id~{}|medication_med_id~{}|med_dosage~{}|med_term~{}'.format(
+            self.prescriptions_prescription_id,
+            self.medication_med_id,
+            self.med_dosage,
+            self.med_term)

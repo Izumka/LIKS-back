@@ -18,27 +18,26 @@ class User(db.Model):
 
     def __init__(self, med_url, med_name, med_man_country, med_composition,
                  med_release_type):
-        self.dz_url = med_url
-        self.name = med_name
-        self.manufacturer = med_man_country
-        self.composition = med_composition
-        self.popular_name = med_release_type
+        self.med_url = med_url
+        self.med_name = med_name
+        self.med_man_country = med_man_country
+        self.med_composition = med_composition
+        self.med_release_type = med_release_type
 
     def __repr__(self):
-        return '{},{},{},{},{},{},{}'.format(
+        return '{},{},{},{},{},{}'.format(
             self.med_id,
-            self.dz_url,
-            self.name,
-            self.manufacturer,
-            self.composition,
-            self.popular_name,
-            self.release_type)
+            self.med_url,
+            self.med_name,
+            self.med_man_country,
+            self.med_composition,
+            self.med_release_type)
 
 
 db.create_all()
 print(User.query.all())
 
-if __name__ == '__main__':
-    test = 'med_id:{},med_ur:{},med_name:{},med_man_country:{},med_composition:{},med_release_type:{}'
-    test.split(',')
-    print(test.split(',').split(':'))
+# if __name__ == '__main__':
+#     test = 'med_id:{},med_ur:{},med_name:{},med_man_country:{},med_composition:{},med_release_type:{}'
+#     test.split(',')
+#     # print(test.split(',').split(':'))
